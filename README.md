@@ -1,1 +1,1 @@
-# team-blur
+# AI Decision-Making Tool
