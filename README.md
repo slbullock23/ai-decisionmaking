@@ -1,1 +1,1 @@
-# AI Decision-Making Tool
+# 🧠✨ Collaborative Decision Intelligence
