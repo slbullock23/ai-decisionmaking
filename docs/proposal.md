@@ -1,17 +1,17 @@
 # 💡 The Proposal
-*What problem are we actually solving?*
+*"What problem are we actually solving?"*
 
 ---
 
-## 1. Problem Statement
+## Problem Statement
 
 Groups make decisions all the time: friends, teams, clubs, and student organizations. Yet those decisions are often inconsistent. The loudest voice tends to win, confidence is rarely measured, and there is no clear record of who was actually right.
 
-Existing tools like group chats, polls, and spreadsheets capture opinions, not decision quality. As a result, there is no reliable way to tell whether a group decision is better than a single person’s guess.
+Existing tools like group chats and polls account for opinions, not the quality of the decisions being made. As a result, there is no reliable way to tell whether a group decision is better than a single person’s.
 
 ---
 
-## 2. Target Users
+## Target Users
 
 **Small, focused groups (5–20 people) making repeat decisions**, such as:
 
@@ -20,11 +20,11 @@ Existing tools like group chats, polls, and spreadsheets capture opinions, not d
 - Clubs deciding on budgets or events  
 - Beginner finance or banking clubs practicing risk assessment  
 
-Sports, banking, and similar domains are used as **test environments**, not end goals. These areas are structured, measurable, and provide fast feedback, making them ideal for validating group decision intelligence.
+Sports, banking, and similar domains are used as **test environments**. 
 
 ---
 
-## 3. Solution Overview
+## Solution Overview
 
 We propose a collaborative decision-making app where users submit:
 
@@ -33,7 +33,7 @@ We propose a collaborative decision-making app where users submit:
 - **A confidence score**  
   - Examples: 1–10 scale or a percentage
 
-The system aggregates all inputs, tracks outcomes, and uses AI to:
+The system takes all inputs, tracks the outcomes, and uses AI to:
 
 - Flag disagreements within the group  
 - Highlight missing perspectives or overlooked context  

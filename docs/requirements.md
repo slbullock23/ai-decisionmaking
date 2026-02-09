@@ -1,41 +1,82 @@
 # 📋 The Requirements
-*The “Minimum Intelligence” list*
 
-This document outlines what the system must do, how it should feel to users, and the minimum AI expectations required for a usable product.
+This document outlines what the system must do, how it should feel to users, and the minimum AI expectations required for this product.
 
 ---
 
 ## 1. Functional Requirements (What It Does)
 
-- Users can create or join a decision group  
-- Users can submit a decision along with a confidence score  
+- Users can create an account and authenticate securely  
+- Users can create or join a **decision group**  
+- Users can submit:
+  - A decision (prediction, choice, or recommendation)
+  - A confidence score (percentage-based)
+- Users can post, edit, archive, or delete their own decisions  
+- Users can comment on decisions made by others in the group  
 - The system records outcomes once results are known  
-- A leaderboard displays individual and group accuracy over time  
-- Users can view past decisions and compare confidence levels to outcomes  
+- The system stores:
+  - Users
+  - Groups
+  - Decisions
+  - Confidence scores
+  - Outcomes
+  - Comments
+- A leaderboard displays:
+  - Individual accuracy
+  - Group accuracy
+  - Historical performance trends
+- Users can view past decisions and compare:
+  - Initial confidence
+  - Final outcome
+  - AI feedback (if available)
 
 ---
 
 ## 2. Non-Functional Requirements (How It Feels)
 
-- **Fast**  
-  - Feedback should appear in under 1 second  
+### Fast
+- Decision submissions and feedback appear in **under 1 second**  
+- Returning users can submit and comment on decisions in **under 1 minute**
 
-- **Fair**  
-  - Scores cannot be edited after submission  
+### Fair
+- Decisions and confidence scores **cannot be edited after submission**  
+- Outcomes are recorded transparently and immutably  
 
-- **Simple**  
-  - No complex setup  
-  - Feels like a group chat, but with structure  
+### Secure
+- Each profile requires password-based authentication  
+- Passwords must be hashed using **bcrypt**  
+- Unauthorized users are denied access to profiles and decision data  
+
+### Simple
+- No complex setup or onboarding  
+- Feels like a **group chat with structure**  
+- Confidence scoring is intuitive and percentage-based  
+
+### Responsive
+- Adapts to varying screen sizes on **Android and iOS**  
+- Usable on small and large devices  
 
 ---
 
 ## 3. AI-Specific Requirements
 
-- The app must function without AI  
-- AI enhances decisions but never blocks them  
-- If AI is unavailable, decisions are still logged and scored  
-- AI feedback must be explainable in plain language  
-
+- The system provides an **AI assistant** to support decision-making  
+- AI capabilities include:
+  - Analyzing group confidence distributions  
+  - Detecting risk, disagreement, or overconfidence  
+  - Providing plain-language feedback  
+- AI **enhances decisions but never blocks them**  
+- The system functions fully **without AI**
+  - Decisions are still logged  
+  - Outcomes are still scored  
+  - Leaderboards still update  
+- If AI is unavailable:
+  - The app continues normal operation  
+  - Users are notified that AI feedback is temporarily unavailable  
+- AI responses must be:
+  - Explainable  
+  - Non-technical  
+  - Actionable  
 ---
 
 ## 4. User Stories
@@ -43,65 +84,67 @@ This document outlines what the system must do, how it should feel to users, and
 ### Administrator / Developer
 
 **As an administrator or developer**,  
-I want to see all registered users  
-so that I can track platform usage.
+I want to see all registered users   so that I can track platform usage and growth.
 
 **Acceptance Criteria**
-- Admin can view every user account  
-- Admin can see the total number of users  
+- Admin can view every registered user  
+- Admin can see total user count  
+- Admin can view high-level usage metrics  
 
 ---
 
 ### Offline Access
 
 **As a user**,  
-I want to prompt the AI whether or not I am connected to WiFi  
-so that I can use the app anywhere.
+I want to submit decisions without an internet connection so that I can use the app anywhere.
 
 **Acceptance Criteria**
-- User can make predictions without an internet connection  
+- Users can submit decisions offline  
+- Decisions are queued locally  
+- Decisions sync automatically once reconnected  
 
 ---
 
 ### Team Management
 
 **As a team leader**,  
-I want to add or remove people from my team  
-so that I can manage my group effectively.
+I want to manage my decision group so that I can control participation.
 
 **Acceptance Criteria**
-- User can see:
-  - Number of users on the team  
-  - Teammate names  
-  - Predictions made by teammates  
-- User can add or remove members as needed  
+- Users can view:
+  - Number of group members  
+  - Member names  
+  - Decisions made by each member  
+- Users can add members  
+- Users can remove members  
 
 ---
 
 ### Confidence Scoring
 
 **As a user**,  
-I want to enter a confidence score for my decision  
-so that the AI can analyze the chance of success.
+I want to enter a confidence score for my decision so that accuracy can be measured over time.
 
 **Acceptance Criteria**
-- User can enter a confidence score as a percentage  
-- AI uses this score to analyze decision quality  
+- Confidence scores are entered as percentages  
+- Confidence scores are locked after submission  
+- AI uses confidence scores when analyzing decisions  
 
 ---
 
 ### Leaderboard & Accuracy Tracking
 
 **As a competitive group member**,  
-I want to see a leaderboard that tracks my accuracy over time  
-so that I can reality-check my predictions.
+I want to see a leaderboard  
+so that I can evaluate my decision accuracy.
 
 **Acceptance Criteria**
+- Leaderboards show individual and group accuracy  
 - Users can compare:
-  - Their confidence scores  
-  - AI-generated confidence or evaluation  
-- User must be within 10% of the AI-generated score to move up the leaderboard  
-- Users ranked low receive a warning in the app  
+  - Confidence scores  
+  - AI-generated evaluations  
+- Users must be within **10% of AI evaluation** to improve ranking  
+- Consistently low-ranked users receive in-app warnings  
 
 ---
 
@@ -109,9 +152,9 @@ so that I can reality-check my predictions.
 
 **As a user**,  
 I want to read and accept the terms and conditions  
-so that I understand the risks and rules of the app.
+so that I understand the rules and risks.
 
 **Acceptance Criteria**
-- Users can read or listen to the terms and conditions  
-- Users must scroll through the full content before accepting  
-- Acceptance is required before using the app  
+- Users can read or listen to the terms  
+- Users must scroll through all content before accepting  
+- Acceptance is required before accessing core features  

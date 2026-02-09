@@ -1,179 +1,96 @@
-# 🧠✨ Collaborative Decision Intelligence
+# 🧠 Collaborative Decision Intelligence
 
-> **Make better decisions together — and prove it.**
+**Make better decisions together and see what actually works.**
 
-This project is a collaborative decision-making app that helps groups move beyond loud opinions and gut feelings. Instead of just capturing *what* people think, it measures **confidence, accuracy, and decision quality over time**.
+A collaborative decision-making app that tracks **decisions, confidence, and accuracy over time**.  
+Instead of just collecting opinions, it helps groups learn from outcomes.
 
-Think of it as a structured group chat for decisions, powered by data and AI.
+Think: **a structured group chat for decisions**, powered by data (and AI).
 
 ---
 
 ## 🚩 The Problem
 
-Groups make decisions constantly: friends, teams, clubs, and student organizations.  
-But those decisions usually suffer from the same issues:
+Group decisions usually fall apart because:
 
 - The loudest voice wins  
-- Confidence is not measured  
-- There is no record of who was actually right  
-- No way to know if the group outperformed an individual  
+- Confidence isn’t measured  
+- Outcomes aren’t tracked  
+- Accuracy is never evaluated  
 
-Existing tools (group chats, polls, spreadsheets) capture opinions, **not decision quality**.
+Chats, polls, and spreadsheets record opinions, **not decision quality**.
 
 ---
 
 ## 🎯 The Solution
 
-A collaborative decision-making platform where users:
+This app lets groups:
 
-- Submit decisions **with confidence scores**
-- Receive structured AI feedback
-- Track outcomes and accuracy over time
-- See when groups outperform individuals
+- Submit decisions with confidence scores  
+- Track outcomes once results are known  
+- See individual and group accuracy over time  
+- Get optional AI feedback on group patterns  
 
-The goal is not to replace human judgment, but to **improve it with feedback, accountability, and insight**.
+The goal is **better judgment through feedback and accountability**, not replacing people.
 
 ---
 
-## 👥 Target Users
+## 👥 Who It’s For
 
-Small, focused groups (5–20 people) making repeat decisions:
+Small groups (5–20 people) making repeat decisions:
 
-- Students working on projects  
-- Friends debating sports outcomes  
-- Clubs deciding budgets or events  
-- Beginner finance or banking clubs practicing risk assessment  
+- Student teams  
+- Friend groups (sports, debates)  
+- Clubs and organizations  
+- Beginner finance or banking groups  
 
-> Sports, banking, and similar domains are **test environments**, not the end goal.  
-> They provide fast, measurable feedback for validating group decision intelligence.
+> Sports and banking are our test cases.
 
 ---
 
 ## ✨ Core Features
 
 - Create or join decision groups  
-- Submit decisions with confidence scores  
-- AI-powered feedback on disagreement and overconfidence  
-- Leaderboards tracking individual and group accuracy  
-- Historical views of past decisions and outcomes  
-- Offline-friendly decision logging (AI enhances, never blocks)
+- Submit decisions with confidence  
+- Accuracy leaderboards (individual + group)  
+- Decision history and outcome tracking  
+- AI feedback on disagreement and overconfidence  
+- Fully functional even without AI  
 
 ---
 
-## 🏗️ Architecture Overview
-
-The system is composed of four main components:
-
-- **Next.js (Frontend)**  
-  User interface for submitting decisions and viewing feedback  
-
-- **FastAPI (Backend)**  
-  Handles validation, business logic, AI orchestration, and data access  
-
-- **PostgreSQL (Database)**  
-  Stores users, decisions, confidence scores, and outcomes  
-
-- **Ollama (Local AI Runtime)**  
-  Analyzes group inputs and returns explainable insights  
-
-### High-Level Data Flow
-
-1. User submits a decision and confidence  
-2. Backend validates and stores the input  
-3. AI analyzes group patterns (conflict, overconfidence, missing context)  
-4. Feedback is returned to the user  
-5. Outcomes are later logged and used for scoring  
-
----
-
-## 🤖 AI Philosophy
-
-- AI is an **advisor**, not a decision-maker  
-- The app works **without AI** if necessary  
-- AI feedback is always **explainable in plain language**  
-- Decisions are never blocked due to AI availability  
-
----
-
-## 📋 Requirements Snapshot
-
-### Functional
-- Group creation and management  
-- Decision and confidence submission  
-- Outcome tracking  
-- Leaderboards and history views  
-
-### Non-Functional
-- Fast feedback (under 1 second)  
-- Fair scoring (no edits after submission)  
-- Simple UX (structured like a group chat)  
-
----
-
-## 🧩 Tech Stack
+## 🏗️ Architecture
 
 - **Frontend:** Next.js  
-- **Backend:** FastAPI (Python)  
+- **Backend:** FastAPI  
 - **Database:** PostgreSQL  
-- **AI Runtime:** Ollama (local LLM inference)  
+- **AI Runtime:** Ollama (local)
 
-### Why This Stack?
+### Data Flow
 
-- Python excels at data analysis and AI integration  
-- FastAPI offers speed, validation, and clean APIs  
-- Local AI ensures privacy, cost control, and experimentation  
-- Web-first UI supports fast group interaction  
+1. User submits a decision + confidence  
+2. Backend validates and stores data  
+3. AI analyzes group patterns (optional)  
+4. Feedback is returned  
+5. Outcomes are logged later for scoring  
 
 ---
 
-## 📈 Long-Term Vision
+## 🤖 AI Principles
 
-Over time, the platform reveals:
+- AI advises, it does not decide  
+- AI never blocks decisions  
+- The app works without AI  
+- All feedback is explainable  
+
+---
+
+## 📈 Vision
+
+Over time, the app reveals:
 
 - Who is consistently accurate  
 - When groups outperform individuals  
-- How confidence aligns with reality  
+- How confidence matches reality  
 
-The ultimate goal is to **build smarter groups**, not louder ones.
-
----
-
-## 🚀 Status
-
-This project is in active development and currently focused on defining core intelligence, architecture, and minimum viable features.
-
-Contributions, feedback, and ideas are welcome.
-
----
-## 🐳 Run with Docker (Quick Start)
-
-The easiest way to run the app is with Docker.
-
-### Start everything
-From the project root, run:
-
-```bash
-docker compose up --build
-```
-This starts:
-```
-Frontend → http://localhost:3000
-Backend → http://localhost:8000
-```
-
-Stop everything
-```
-docker compose down
-```
-
-(Optional) Reset all data
-```
-docker compose down -v
-```
-
-(Optional) Pull an AI model
-```
-docker exec -it ollama ollama pull llama3
-```
-
-That’s it. You’re running the full stack locally 🚀
+**Smarter groups. Better decisions**
