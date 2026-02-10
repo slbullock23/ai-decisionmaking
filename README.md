@@ -1,4 +1,4 @@
-# 🧠 Collaborative Decision Intelligence
+# 🧠 Collaborative Decision-Making
 
 **Make better decisions together and see what actually works.**
 
